@@ -46,7 +46,7 @@ const actualizarTarea = async (req, res) => {
     if (!tarea) {
       return res.status(404).json({
         ok: false,
-        msg: "Tarea no existe por ese id",
+        msg: "No existe tarea con ese id",
       });
     }
 
@@ -95,7 +95,7 @@ const eliminarTarea = async (req, res) => {
     if (!tarea) {
       return res.status(404).json({
         ok: false,
-        msg: "Tarea no existe por ese id",
+        msg: "No existe tarea con ese id",
       });
     }
 
@@ -108,17 +108,17 @@ const eliminarTarea = async (req, res) => {
 
 
 
-    await Evento.findByIdAndDelete(eventoId);
+    await Tarea.findByIdAndDelete(tareaId);
 
     res.json({
       ok: true,
-      message: "Evento eliminado",
+      msg: "Tarea eliminada",
     });
   } catch (error) {
     console.log(error);
     res.status(500).json({
       ok: false,
-      message: "Hable con el administrador",
+      msg: "Hable con el administrador",
     });
   }
 };
