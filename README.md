@@ -7,6 +7,11 @@
 npm install
 ```
 
+#### Instalar nodemon: 
+
+```
+npm i nodemon 
+```
 
 #### Luego para arrancar el servidor debe ejecutar el siguiente comando: 
 
