@@ -11,14 +11,14 @@ const router = Router();
 //Todas las peticiones tienen que pasar por validar token
 router.use(validarJWT);
 
-// Obtener eventos
+// Obtener tareas
 router.get('/', getTareas);
 
 
 // Crear tarea
 router.post('/',
     [
-        check('title', 'El titulo es obligatorio').not().isEmpty(),
+        check('desc', 'La descripción es obligatoria').not().isEmpty(),
         validarCampos
     ],
     crearTarea
@@ -29,7 +29,7 @@ router.post('/',
 router.put('/:id', 
 
     [
-        check('title', 'El titulo es obligatorio').not().isEmpty(),
+        check('desc', 'La descripción es obligatoria').not().isEmpty(),
         validarCampos
     ],
     actualizarTarea

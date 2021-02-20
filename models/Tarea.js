@@ -3,9 +3,17 @@ const {Schema, model} = require('mongoose');
 
 const TareaSchema = Schema({
 
-    title: {
+    desc: {
         type: String,
         required: true
+    },
+    date: { 
+        type: Date, 
+        default: Date.now 
+    },
+    vigente: {
+        type: Boolean,
+        default: true
     },
     user: {
         type: Schema.Types.ObjectId,
